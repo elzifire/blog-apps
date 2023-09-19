@@ -42,6 +42,8 @@ Route::prefix('admin')->group(function () {
         //posts
         Route::resource('/post', App\Http\Controllers\Admin\PostController::class, ['except' => 'show' ,'as' => 'admin']);
 
+
+        
         //video
         Route::resource('/video', App\Http\Controllers\Admin\VideoController::class, ['except' => 'show' ,'as' => 'admin']);
     });

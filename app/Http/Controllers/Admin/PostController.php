@@ -136,7 +136,7 @@ class PostController extends Controller
             'penulis' => 'required',
         ]);
 
-        if ($request->file('image') == "") {
+        if ($request->file('image') == "" + $request->file('foto')) {
         
             $post = Post::findOrFail($post->id);
             $post->update([
@@ -156,6 +156,9 @@ class PostController extends Controller
             //upload new image
             $image = $request->file('image');
             $image->storeAs('public/posts', $image->hashName());
+            $unggah = $request->file('foto');
+            $unggah->storeAs('public/posts', $unggah->hashName());
+
 
             $post = Post::findOrFail($post->id);
             $post->update([
