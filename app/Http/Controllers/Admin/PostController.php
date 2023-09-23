@@ -133,10 +133,10 @@ class PostController extends Controller
             'title'         => 'required|unique:posts,title,'.$post->id,
             'category_id'   => 'required',
             'content'       => 'required|string',
-            'penulis' => 'required',
+            'penulis'       => 'required|string',
         ]);
 
-        if ($request->file('image') == "" + $request->file('foto')) {
+        if ($request->file('image') == "" ) {
         
             $post = Post::findOrFail($post->id);
             $post->update([
@@ -144,8 +144,7 @@ class PostController extends Controller
                 'slug'        => Str::slug($request->input('title'), '-'),
                 'category_id' => $request->input('category_id'),
                 'content'     => $request->input('content'),
-                'penulis' => $request->input('penulis'),
-                
+                'penulis'     => $request->input('penulis'),
             ]);
 
         } else {
@@ -156,9 +155,6 @@ class PostController extends Controller
             //upload new image
             $image = $request->file('image');
             $image->storeAs('public/posts', $image->hashName());
-            $unggah = $request->file('foto');
-            $unggah->storeAs('public/posts', $unggah->hashName());
-
 
             $post = Post::findOrFail($post->id);
             $post->update([
@@ -167,7 +163,7 @@ class PostController extends Controller
                 'slug'        => Str::slug($request->input('title'), '-'),
                 'category_id' => $request->input('category_id'),
                 'content'     => $request->input('content'),
-                'penulis' =>$request->input('penulis'),
+                'penulis' =>    $request->input('penulis'),
             ]);
 
         }

@@ -88,7 +88,7 @@
 
                         <div class="form-group">
                             <label>Penulis</label>
-                            <input type="text" name="penulis" value="{{ old('penulis') }}" placeholder="Masukkan Penulis" class="form-control @error('penulis') is-invalid @enderror">
+                            <input type="text" name="penulis" value="{{ old('penulis', $post->penulis) }}" placeholder="Masukkan Penulis" class="form-control @error('penulis') is-invalid @enderror">
 
                             @error('penulis')
                             <div class="invalid-feedback" style="display: block">

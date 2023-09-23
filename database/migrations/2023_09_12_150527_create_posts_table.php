@@ -18,6 +18,7 @@ return new class extends Migration
          $table->string('slug');
          $table->bigInteger('category_id')->unsigned();
          $table->text('content');
+         $table->string('penulis');
         //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
          $table->timestamps();
       });

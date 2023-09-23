@@ -116,10 +116,14 @@
        tinymce.init({
       selector: 'textarea',
       plugins: 'tinydrive anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount ',
-      toolbar: 'insert undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat paste',
+      toolbar: ' undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat paste',
     //   tinydrive_token_provider: '/jwt/'
     paste_data_images: false,
     images_file_types: 'jpg,svg,webpjpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp',
+//     tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
+//   tinydrive_dropbox_app_key: 'kv3ehrz1mzpjh5p',
+    tinydrive_google_drive_key: 'AIzaSyBpVIiSdxLwxxCefwiXZIFXcX1hvQ4R1ik',
+    tinydrive_google_drive_client_id: '138764128104-l0tnhfmo2h4u538583j7vq0i8dvm23jh.apps.googleusercontent.com',
     
     });
     </script>
